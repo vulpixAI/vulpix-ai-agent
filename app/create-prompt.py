@@ -11,7 +11,7 @@ connection = psycopg2.connect(
     database="vulpix",
     host="localhost",
     user="postgres",
-    password="30112004",
+    password="",
     port="5432"
 )
 
