@@ -2,7 +2,7 @@ import google.generativeai as genai
 import psycopg2
 import json 
 
-GOOGLE_API_KEY = 'AIzaSyD6kN7Rp_UHJS6yRzqOOolf0E4NTyjM4iI'
+GOOGLE_API_KEY = ''
 genai.configure(api_key=GOOGLE_API_KEY)
 
 model = genai.GenerativeModel("gemini-1.5-flash")
