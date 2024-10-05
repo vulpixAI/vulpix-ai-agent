@@ -2,7 +2,7 @@ import google.generativeai as genai
 import json 
 import psycopg2
 
-GOOGLE_API_KEY = 'AIzaSyD6kN7Rp_UHJS6yRzqOOolf0E4NTyjM4iI'
+GOOGLE_API_KEY = ''
 genai.configure(api_key=GOOGLE_API_KEY)
 
 model = genai.GenerativeModel("gemini-1.5-flash")
@@ -11,7 +11,7 @@ connection = psycopg2.connect(
     database="vulpix",
     host="localhost",
     user="postgres",
-    password="30112004",
+    password="",
     port="5432"
 )
 
