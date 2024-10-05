@@ -11,17 +11,18 @@ connection = psycopg2.connect(
     database="vulpix",
     host="localhost",
     user="postgres",
-    password="",
+    password="30112004",
     port="5432"
 )
 
 cursor = connection.cursor()
 
-cursor.execute("SELECT informacao FROM informacoes WHERE id = 2;")
+cursor.execute("SELECT informacao FROM informacoes WHERE id = 4;")
+
 info_user = cursor.fetchone()
 
 def create_prompt(info_user):
-    form_dict = info_user[0]  # O info_user[0] é um dicionário
+    form_dict = info_user[0]  
 
     form_str = json.dumps(form_dict, indent=4)
 
@@ -45,7 +46,7 @@ def create_prompt(info_user):
 
     print(prompt_final)
 
-    cursor.execute("UPDATE informacoes SET user_prompt = %s WHERE id = 2;", (prompt_final,))
+    cursor.execute("UPDATE informacoes SET user_prompt = %s WHERE id = 4;", (prompt_final,))
 
     connection.commit()
   

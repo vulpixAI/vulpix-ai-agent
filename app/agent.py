@@ -19,6 +19,7 @@ connection = psycopg2.connect(
 cursor = connection.cursor()
 
 
+
 prompt =  """
 Create a detailed, captivating image prompt designed for Stable Diffusion. The image should aim to attract new customers, making the product or service stand out. It must balance vibrant visuals with clear messaging that compels the viewer to want to buy. The text and visuals must align perfectly, offering both clarity and appeal.
 The prompt for Stable Diffusion should contain the following elements:
