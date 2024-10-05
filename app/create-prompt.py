@@ -1,6 +1,6 @@
 import google.generativeai as genai
-import psycopg2
 import json 
+import psycopg2
 
 GOOGLE_API_KEY = 'AIzaSyD6kN7Rp_UHJS6yRzqOOolf0E4NTyjM4iI'
 genai.configure(api_key=GOOGLE_API_KEY)
@@ -19,14 +19,6 @@ cursor = connection.cursor()
 
 cursor.execute("SELECT informacao FROM informacoes WHERE id = 2;")
 info_user = cursor.fetchone()
-
-cursor.close()
-connection.close()
-
-#if info_user is None:
-#   print("Nenhum dado encontrado.")
-#else:
-#    print("Data from DB:", info_user[0])
 
 def create_prompt(info_user):
     form_dict = info_user[0]  # O info_user[0] é um dicionário
@@ -49,7 +41,14 @@ def create_prompt(info_user):
 
     response = model.generate_content(prompt)
 
-    print(response)
+    prompt_final = response.text
+
+    print(prompt_final)
+
+    cursor.execute("UPDATE informacoes SET user_prompt = %s WHERE id = 2;", (prompt_final,))
+
+    connection.commit()
+  
 
 if info_user:
     create_prompt(info_user)

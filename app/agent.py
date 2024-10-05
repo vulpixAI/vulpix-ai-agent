@@ -1,6 +1,6 @@
 import google.generativeai as genai
-import psycopg2 
 import json
+import psycopg2
 
 # Configuração da API
 GOOGLE_API_KEY = ''
