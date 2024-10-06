@@ -22,6 +22,7 @@ connection = psycopg2.connect(
 cursor = connection.cursor()
 
 cursor.execute("SELECT informacao FROM informacoes WHERE id = 4;")
+
 info_user = cursor.fetchone()
 
 def create_request_ai():
@@ -35,7 +36,7 @@ def create_request_ai():
     """
 
     request_caption = user_request_image + form_str + """
-    ransform the following pieces of information into a single, concise block of text suitable for a short social media caption. Ensure the content is engaging, clear, and highlights key details. Return the caption in Portuguese.
+    Transform the following pieces of information into a single, concise block of text suitable for a short social media caption. Ensure the content is engaging, clear, and highlights key details. Return the caption in Portuguese.
     """
 
     response = model.generate_content(request_caption)
