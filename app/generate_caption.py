@@ -25,7 +25,7 @@ cursor.execute("SELECT informacao FROM informacoes WHERE id = 4;")
 
 info_user = cursor.fetchone()
 
-def create_request_ai():
+def caption_generator():
     form_dict = info_user[0]  
 
     form_str = json.dumps(form_dict, indent=4)
@@ -43,7 +43,8 @@ def create_request_ai():
 
     print(response.text)
 
-create_request_ai()
+generate_caption()
 
 cursor.close()
 connection.close()
+

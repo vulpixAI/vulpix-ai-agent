@@ -25,7 +25,7 @@ cursor.execute("SELECT informacao FROM informacoes WHERE id = 4;")
 
 info_user = cursor.fetchone()
 
-def create_prompt(info_user):
+def prompt_generator(info_user):
     form_dict = info_user[0]  
 
     form_str = json.dumps(form_dict, indent=4)
@@ -56,4 +56,4 @@ def create_prompt(info_user):
   
 
 if info_user:
-    create_prompt(info_user)
+    generate_prompt(info_user)
