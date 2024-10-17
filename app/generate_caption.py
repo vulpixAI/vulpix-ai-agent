@@ -43,7 +43,7 @@ def caption_generator():
 
     print(response.text)
 
-generate_caption()
+caption_generator()
 
 cursor.close()
 connection.close()

@@ -56,4 +56,4 @@ def prompt_generator(info_user):
   
 
 if info_user:
-    generate_prompt(info_user)
+    prompt_generator(info_user)

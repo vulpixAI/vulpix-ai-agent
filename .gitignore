@@ -1,2 +1,4 @@
 Projectmyenv
 .env
+__pycache__
+verImagem.py
