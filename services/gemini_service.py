@@ -2,10 +2,9 @@
 import google.generativeai as genai
 from app.utils.config import GOOGLE_API_KEY
 
-
 genai.configure(api_key=GOOGLE_API_KEY)
 
-model = genai.Model(name="gemini-1.5-flash")
+model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 def generate_prompt(form_data):
     request_text = f"""

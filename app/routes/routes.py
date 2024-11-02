@@ -1,6 +1,5 @@
-# routes.py
 from flask import Flask, request, jsonify
-from app.generate_content import generate_content
+from app.routes.generate_content import generate_content
 from services.gemini_service import generate_prompt
 
 app = Flask(__name__)
