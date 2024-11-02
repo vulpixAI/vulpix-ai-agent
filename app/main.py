@@ -1,5 +1,4 @@
-from flask import Flask, jsonify, request, make_response
+from app.routes import app
 
-app = Flask(__name__)
-
-app.run()
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
