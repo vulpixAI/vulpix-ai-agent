@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify
-from app.generate_image import image_generator
-from app.generate_caption import caption_generator
-from app.generate_prompt import prompt_generator
+from app.routes.generate_image import image_generator
+from app.routes.generate_caption import caption_generator
+from app.routes.generate_prompt import prompt_generator
+from app.view_image import check_status, get_image_urls
 
 app = Flask(__name__)
 
