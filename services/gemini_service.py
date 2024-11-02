@@ -7,6 +7,7 @@ genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 def generate_prompt(form_data):
+    # Define o texto da solicitação para a API de geração de conteúdo
     request_text = f"""
     Transform the following form data into a detailed, English-language prompt for an image generation model. 
     Ensure that all information provided in the form is incorporated into the prompt. The prompt should be structured to 
@@ -17,8 +18,10 @@ def generate_prompt(form_data):
 
     The generated prompt should be in English.
     """
-    response = model.generate_text(request_text)
-    return response.result
+    response = model.generate_content(request_text)
+
+    generated_text = getattr(response, 'text', "Prompt generation failed.")  
+    return {"prompt": generated_text}
 
 def generate_caption(description):
     request_caption = f"""
@@ -28,5 +31,5 @@ def generate_caption(description):
     Description:
     {description}
     """
-    response = model.generate_text(request_caption)
-    return response.result
+    response = model.generate_content(request_caption)
+    return response.text

@@ -4,21 +4,32 @@ from services.gemini_service import generate_prompt
 
 app = Flask(__name__)
 
-#geração de prompt
 @app.route('/generate-prompt', methods=['POST'])
 def create_prompt():
-    data = request.json
-    form_data = data.get('form_data')
-    prompt = generate_prompt(form_data)
-    return jsonify({"prompt": prompt})
+    try:
+        data = request.json
+        form_data = data.get('form_data')
+        if not form_data:
+            raise ValueError("form_data não foi fornecido na requisição")
+        
+        response = generate_prompt(form_data)
+        
+        return jsonify(response) 
+    except Exception as e:
+        print(f"Erro no /generate-prompt: {e}")
+        return jsonify({"error": f"Erro ao gerar o prompt: {str(e)}"}), 500
 
-#geração de imagem e legenda
+
+
 @app.route('/generate-content', methods=['POST'])
 def create_content():
-    data = request.json
-    prompt = data.get('prompt')
-    user_request = data.get('user_request')
-    
-    result = generate_content(prompt, user_request)
-    
-    return jsonify(result)
+    try:
+        data = request.json
+        prompt = data.get('prompt')
+        user_request = data.get('user_request')
+        
+        result = generate_content(prompt, user_request)
+        return jsonify(result)
+    except Exception as e:
+        print(f"Erro no /generate-content: {e}")
+        return jsonify({"error": f"Erro ao gerar conteúdo: {str(e)}"}), 500
