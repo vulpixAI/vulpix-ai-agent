@@ -22,11 +22,14 @@ def generate_prompt(form_data):
 
 def generate_caption(description):
     request_caption = f"""
-    Based on the following description, generate a concise and engaging 
-    caption suitable for social media. Ensure the caption highlights the key elements effectively and is written in Brazilian Portuguese.
+    
+    Based on the following description, generate a concise and engaging caption suitable for social media. 
+    Ensure the caption is in Brazilian Portuguese and highlights the key elements effectively
 
     Description:
     {description}
+
+    Caption in Brazilian Portuguese:
     """
     response = model.generate_content(request_caption)
     return response.text
