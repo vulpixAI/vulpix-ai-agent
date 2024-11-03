@@ -45,5 +45,5 @@ def generate_request(prompt, user_request):
         Please generate a cohesive and concise prompt in English that naturally integrates the main elements of both inputs, staying within the character limit.
     """
     response = model.generate_content(request_text)
-    return response
+    return response.text
 
