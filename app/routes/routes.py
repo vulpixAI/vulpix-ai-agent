@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from app.routes.generate_content import generate_content
 from services.gemini_service import generate_prompt
+from services.gemini_service import generate_caption
 
 app = Flask(__name__)
 
@@ -43,7 +44,7 @@ def generate_caption_route():
         if not description:
             raise ValueError("description não foi fornecido na requisição")
         
-        response = generate_caption_route(description)
+        response = generate_caption(description)
         
         return jsonify({"caption": response})
     except Exception as e:
