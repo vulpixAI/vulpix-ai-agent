@@ -22,8 +22,8 @@ def generate_prompt(form_data):
 
 def generate_caption(description):
     request_caption = f"""
-    Based on the following description, generate a concise and engaging caption suitable for social media. 
-    Ensure the caption is in English and highlights the key elements effectively.
+    Based on the following description, generate a concise and engaging 
+    caption suitable for social media. Ensure the caption highlights the key elements effectively and is written in Brazilian Portuguese.
 
     Description:
     {description}
