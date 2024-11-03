@@ -26,3 +26,7 @@ def generate_content(prompt, user_request):
         "image_urls": image_urls,
         "caption": caption
     }
+
+
+
+

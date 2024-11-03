@@ -33,3 +33,19 @@ def create_content():
     except Exception as e:
         print(f"Erro no /generate-content: {e}")
         return jsonify({"error": f"Erro ao gerar conteúdo: {str(e)}"}), 500
+    
+    
+@app.route('/generate-caption', methods=['POST'])
+def generate_caption_route():
+    try:
+        data = request.json
+        description = data.get('description')
+        if not description:
+            raise ValueError("description não foi fornecido na requisição")
+        
+        response = generate_caption_route(description)
+        
+        return jsonify({"caption": response})
+    except Exception as e:
+        print(f"Erro no /generate-caption: {e}")
+        return jsonify({"error": f"Erro ao gerar a legenda: {str(e)}"}), 500
