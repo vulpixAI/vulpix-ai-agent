@@ -20,7 +20,7 @@ def generate_content(prompt, user_request):
         return {"error": "Image generation is taking too long or failed to produce images"}
 
     #gera legenda usando o user_request
-    caption = generate_caption(user_request)
+    caption = generate_caption(prompt,user_request)
 
     return {
         "image_urls": image_urls,
