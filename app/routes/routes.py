@@ -40,13 +40,16 @@ def create_content():
 def generate_caption_route():
     try:
         data = request.json
-        description = data.get('description')
-        if not description:
-            raise ValueError("description não foi fornecido na requisição")
+        prompt = data.get('prompt')
+        user_request = data.get('user_request')
         
-        response = generate_caption(description)
-        
-        return jsonify({"caption": response})
+        # Verifica se o prompt e user_request foram fornecidos
+        if not prompt or not user_request:
+            return jsonify({"error": "prompt e/ou user_request não foram fornecidos na requisição"}), 400
+
+        # Gera a legenda usando prompt e user_request
+        response = generate_caption(prompt, user_request)
+        return response
     except Exception as e:
         print(f"Erro no /generate-caption: {e}")
-        return jsonify({"error": f"Erro ao gerar a legenda: {str(e)}"}), 500
+        return jsonify({"error": f"Erro ao gerar legenda: {str(e)}"}), 500

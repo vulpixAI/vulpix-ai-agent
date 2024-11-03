@@ -20,19 +20,21 @@ def generate_prompt(form_data):
     generated_text = getattr(response, 'text', "Prompt generation failed.")  
     return {"prompt": generated_text}
 
-def generate_caption(description):
+def generate_caption(prompt, user_request):
     request_caption = f"""
-    
-    Based on the following description, generate a concise and engaging caption suitable for social media. 
-    Ensure the caption is in Brazilian Portuguese and highlights the key elements effectively
+    Based on the following prompt and user request, generate a concise and engaging caption suitable for social media. 
+    The caption should be in Brazilian Portuguese and should highlight the key elements effectively.
 
-    Description:
-    {description}
+    Prompt:
+    {prompt}
+
+    User Request:
+    {user_request}
 
     Caption in Brazilian Portuguese:
     """
     response = model.generate_content(request_caption)
-    return response.text
+    return response.text.strip()
 
 def generate_request(prompt, user_request):
     request_text = f"""
