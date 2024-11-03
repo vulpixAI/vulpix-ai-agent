@@ -3,13 +3,15 @@ import requests
 import time
 from app.utils.config import LEONARDO_API_KEY
 
-def generate_image(prompt_text):
+def generate_image(prompt_text, user_request):
     url = "https://cloud.leonardo.ai/api/rest/v1/generations"
     headers = {
         "accept": "application/json",
         "content-type": "application/json",
         "authorization": f"Bearer {LEONARDO_API_KEY}"
     }
+
+    prompt = prompt_text + ".\n" + user_request
     
     payload = {
         "alchemy": True,
@@ -17,7 +19,7 @@ def generate_image(prompt_text):
         "modelId": "6b645e3a-d64f-4341-a6d8-7a3690fbf042", 
         "num_images": 4,
         "presetStyle": "DYNAMIC",
-        "prompt": prompt_text,
+        "prompt": prompt,
         "width": 1024
     }
     
