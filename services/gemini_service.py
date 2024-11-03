@@ -1,4 +1,3 @@
-# gemini_service.py
 import google.generativeai as genai
 from app.utils.config import GOOGLE_API_KEY
 
@@ -7,12 +6,10 @@ genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 def generate_prompt(form_data):
-    # Define o texto da solicitação para a API de geração de conteúdo
     request_text = f"""
-    Transform the following form data into a detailed, English-language prompt for an image generation model. 
-    Ensure that all information provided in the form is incorporated into the prompt. The prompt should be structured to 
-    guide the image generation model (e.g., Stable Diffusion) to create a visually accurate and contextually relevant image.
-
+    Transform the following form data into a clear, detailed prompt for an image generation model. Incorporate all information from 
+    the form thoroughly into the prompt. The resulting prompt should be structured to guide the image generation model (such as Stable Diffusion) 
+    to produce an image that is both visually accurate and contextually relevant. Ensure the prompt is concise and strictly limited to a maximum of 1300 characters.
     Form data:
     {form_data}
 
