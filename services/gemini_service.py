@@ -33,3 +33,20 @@ def generate_caption(description):
     """
     response = model.generate_content(request_caption)
     return response.text
+
+def generate_request(prompt, user_request):
+    request_text = f"""
+        Combine the following information into a single, detailed prompt for Stable Diffusion, limited to a maximum of 1100 characters. 
+        The prompt should create an eye-catching image that reflects the user’s request while incorporating the company’s branding and values.
+        
+        Base Prompt:
+        {prompt}
+
+        User Request:
+        {user_request}
+
+        Please generate a cohesive and concise prompt in English that naturally integrates the main elements of both inputs, staying within the character limit.
+    """
+    response = model.generate_content(request_text)
+    return response
+
