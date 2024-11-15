@@ -29,13 +29,12 @@ def create_content():
         if AMBIENTE == 'DEV':
             return mock_json()
         else:
-            # data = request.json
-            # prompt = data.get('prompt')
-            # user_request = data.get('user_request')
+            data = request.json
+            prompt = data.get('prompt')
+            user_request = data.get('user_request')
             
-            # result = generate_content(prompt, user_request)
-            # return jsonify(result)
-            return null
+            result = generate_content(prompt, user_request)
+            return jsonify(result)
     except Exception as e:
         print(f"Erro no /generate-content: {e}")
         return jsonify({"error": f"Erro ao gerar conteúdo: {str(e)}"}), 500
