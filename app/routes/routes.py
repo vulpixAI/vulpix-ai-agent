@@ -60,10 +60,10 @@ def generate_caption_route():
 
 def mock_json():
     image_urls = [
-        "https://scontent.cdninstagram.com/v/t51.2885-15/465612471_1832441967561171_5765861591217010485_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=0UotgaD99foQ7kNvgH834VS&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AM6HXa8EAAAA&oh=00_AYAiwgFpHGZ5x8S0XHoTd7UZ8YgkzgAaHS1HWf9ZCRnr7w&oe=673A994B",
-        "https://scontent.cdninstagram.com/v/t51.2885-15/465603063_1594588258145224_3558823223195028993_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=18de74&_nc_ohc=4t9cavUlJ1AQ7kNvgGHL0O-&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AM6HXa8EAAAA&oh=00_AYCErLRIly4QuFq50bL0mFpDz0U7c7i3V1frLUNdDQO2ng&oe=673A864F",
-        "https://scontent.cdninstagram.com/v/t51.2885-15/465437823_8755403637861308_4625396683262565077_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=18de74&_nc_ohc=47jyD0pjsw0Q7kNvgF1o1HM&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AM6HXa8EAAAA&oh=00_AYAIb5Qjo8YVHhiXxV14m4iwECd8yIxKK8qbWUF-PdHIww&oe=673A94FD",
-        "https://scontent.cdninstagram.com/v/t51.2885-15/465579744_3765236240472987_173456101577689593_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=18de74&_nc_ohc=74AJnCw_mrEQ7kNvgHxkwn8&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AM6HXa8EAAAA&oh=00_AYCWCIrjorBjDdA1SDKg0JFqCgq3HLfziD3xaQ2fgy9dVg&oe=673A7CEF"
+        "https://lh3.googleusercontent.com/pw/AIL4fc-cY2NZaUkY03qTxDZ6BuUJmuhFd_dxaF1k3Tm5t1S_JmGhTQ-gKbKXGDUZadtxRnbz5XLTiGnG3iOYbgHVizGP5hQDHMb9oPM86_VrHlEJKmld7iT9l3mDey2fFGPAoBPhiLouS-SuPN9KkyhoDxmQ=w1138-h1135-s-no?authuser=0",
+        "https://leonardo-cdn.b-cdn.net/wp-content/uploads/2023/07/0-2022-12-02T033131-1.png",
+        "https://www.promptpal.net/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fe3itcv4k%2Fproduction%2F7ce0ff9d56ddc96e39982b6025f1e5779a7ff0e8-1536x2304.jpg&w=750&q=75",
+        "https://miro.medium.com/v2/resize:fit:1024/1*5Xc1yC5c__spfn_halRugw.jpeg"
     ]
     return {
         "image_urls": image_urls,
