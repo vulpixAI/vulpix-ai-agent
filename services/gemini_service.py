@@ -24,8 +24,8 @@ def generate_prompt(form_data):
 def generate_caption(prompt, user_request):
     request_caption = f"""
     Based on the following prompt and user request, generate a concise and engaging caption suitable for social media. 
-    The caption should be in Brazilian Portuguese and should highlight the key elements effectively.
-
+    The caption should be in Brazilian Portuguese, effectively highlight the key elements, and should not be in bold.
+    
     Prompt:
     {prompt}
 
