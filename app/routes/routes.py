@@ -60,10 +60,10 @@ def generate_caption_route():
 
 def mock_json():
     image_urls = [
-        "https://lh3.googleusercontent.com/pw/AIL4fc-cY2NZaUkY03qTxDZ6BuUJmuhFd_dxaF1k3Tm5t1S_JmGhTQ-gKbKXGDUZadtxRnbz5XLTiGnG3iOYbgHVizGP5hQDHMb9oPM86_VrHlEJKmld7iT9l3mDey2fFGPAoBPhiLouS-SuPN9KkyhoDxmQ=w1138-h1135-s-no?authuser=0",
-        "https://leonardo-cdn.b-cdn.net/wp-content/uploads/2023/07/0-2022-12-02T033131-1.png",
-        "https://www.promptpal.net/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fe3itcv4k%2Fproduction%2F7ce0ff9d56ddc96e39982b6025f1e5779a7ff0e8-1536x2304.jpg&w=750&q=75",
-        "https://miro.medium.com/v2/resize:fit:1024/1*5Xc1yC5c__spfn_halRugw.jpeg"
+        "https://avatars.githubusercontent.com/u/83714306?v=4",
+        "https://media.licdn.com/dms/image/v2/D4D03AQHWCQmpIUBSzg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1727672217059?e=2147483647&v=beta&t=0bGpO80n_89w-1KyOBNwZjPsnteTDDZGVyHoMguE_k0",
+        "https://avatars.githubusercontent.com/u/142420909?v=4",
+        "https://media.licdn.com/dms/image/v2/D4D03AQGgU0JTKFdEcQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1703171602261?e=2147483647&v=beta&t=u4jvPyQXJLWxWkbEXcsEe_l7gzNGh0nbgp1Ohab81n0"
     ]
     return {
         "image_urls": image_urls,
