@@ -6,6 +6,7 @@ load_dotenv()
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 LEONARDO_API_KEY = os.getenv("LEONARDO_API_KEY")
+AMBIENTE = os.getenv("AMBIENTE")
 
 # DB_HOST = os.getenv("DB_HOST")
 # DB_PORT = os.getenv("DB_PORT")
