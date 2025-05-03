@@ -1,10 +1,16 @@
 from flask import Flask, request, jsonify
+from flask_swagger_ui import get_swaggerui_blueprint
 from app.routes.generate_content import generate_content
 from services.gemini_service import generate_prompt
 from services.gemini_service import generate_caption
 from app.utils.config import AMBIENTE
 
 app = Flask(__name__)
+
+SWAGGER_URL = '/swagger'
+API_URL = '/static/swagger.json'
+swagguerui_blueprint = get_swaggerui_blueprint(SWAGGER_URL, API_URL)
+app.register_blueprint(swagguerui_blueprint, url_prefix=SWAGGER_URL)
 
 @app.route('/generate-prompt', methods=['POST'])
 def create_prompt():
