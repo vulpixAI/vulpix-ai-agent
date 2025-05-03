@@ -1,0 +1,120 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Vulpix AI API",
+        "description": "API para geração de conteúdo, prompts e legendas"
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "schemes": ["http"],
+    "paths": {
+        "/generate-prompt": {
+            "post": {
+                "summary": "Gera um prompt",
+                "description": "Recebe dados do formulário e gera um prompt com base neles.",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "form_data": {
+                                    "type": "string",
+                                    "example": "Exemplo de dados do formulário"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Prompt gerado com sucesso"
+                    },
+                    "400": {
+                        "description": "Erro na requisição"
+                    },
+                    "500": {
+                        "description": "Erro ao gerar o prompt"
+                    }
+                }
+            }
+        },
+        "/generate-content": {
+            "post": {
+                "summary": "Gera conteúdo",
+                "description": "Gera conteúdo com base no prompt e na solicitação do usuário.",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "prompt": {
+                                    "type": "string",
+                                    "example": "Exemplo de prompt"
+                                },
+                                "user_request": {
+                                    "type": "string",
+                                    "example": "Exemplo de solicitação do usuário"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conteúdo gerado com sucesso"
+                    },
+                    "400": {
+                        "description": "Erro na requisição"
+                    },
+                    "500": {
+                        "description": "Erro ao gerar conteúdo"
+                    }
+                }
+            }
+        },
+        "/generate-caption": {
+            "post": {
+                "summary": "Gera uma legenda",
+                "description": "Gera uma legenda com base no prompt e na solicitação do usuário.",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "prompt": {
+                                    "type": "string",
+                                    "example": "Exemplo de prompt"
+                                },
+                                "user_request": {
+                                    "type": "string",
+                                    "example": "Exemplo de solicitação do usuário"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Legenda gerada com sucesso"
+                    },
+                    "400": {
+                        "description": "Erro na requisição"
+                    },
+                    "500": {
+                        "description": "Erro ao gerar legenda"
+                    }
+                }
+            }
+        }
+    }
+}
